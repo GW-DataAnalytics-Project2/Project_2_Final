@@ -2,8 +2,9 @@ body {
   background: LightSteelBlue;
 }
 
-h1{text-align: center;
+h2{text-align: center;
    width: 100%;
+   font-size: 25px;
 }
 
 h6{text-align: center;
@@ -15,7 +16,7 @@ h6{text-align: center;
     min-height: 75px;
 }
 
-#pie {
+#pie { 
     width: 100%;
     height: 100%;
 }
@@ -26,6 +27,18 @@ h6{text-align: center;
 }
 
 #bubble {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+#scatter1 {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+#scatter2 {
     text-align: center;
     width: 100%;
     height: 100%;
