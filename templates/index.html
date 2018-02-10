@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DC Airbnb Data</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
- <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css">
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -37,10 +38,11 @@
     </div>
   </nav>
 
-    <div class="container">
+
+    <div class="container-fluid">
         <div class="row">
                 <div class="col-md-12 jumbotron text-center">
-                    <h2><strong>Airbnb Datasets Analysis in Washington, D.C.</strong></h2>
+                    <h2><strong>Airbnb Datasets Analysis in Washington, D.C.<strong></h2>
                     <p>Use the interactive charts below to explore the Airbnb and Crime datasets</p>
                 </div>
         </div>
@@ -50,21 +52,21 @@
                     <h4>SELECT Neighborhood:</h4>
                     <select id="selDataset" onchange="optionChanged(this.value)"></select>
                 </div>
-
+                
                 <div class="panel panel-primary col-md-4">
                     <div class="panel-heading">
                         <h3 class="panel-title">Entire Home Data</h3>
                     </div>
                     <div id="entire" class="panel-body"></div>
                 </div>
-
+           
                 <div class="panel panel-primary col-md-4">
                     <div class="panel-heading">
                         <h3 class="panel-title">Private Room Data</h3>
                     </div>
                     <div id="private" class="panel-body"></div>
                 </div>
-
+          
                 <div class="panel panel-primary col-md-4">
                     <div class="panel-heading">
                         <h3 class="panel-title">Shared Room Data</h3>
@@ -74,29 +76,53 @@
             </div>
 
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6">
-                <div id="pie"></div>
-            </div>
-            <div class="col-md-6">
-                <div id="gauge"></div>
+   
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div id="pie"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="gauge"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12", style="display:inline-block",>
-             <div class="topleft" style="text-align:center; float:left;">
-                <div id="bubble"></div>
-             </div>
+
+        <div class="row">
+            <div class="col-md-12", style="display:inline-block",>
+                <div class="topleft" style="text-align:center; float:left;">
+                    <div id="bubble"></div>
+                </div>
+            </div>     
         </div>
+
+        <div class="row">
+            <div class="col-md-12 jumbotron text-center">
+                <h2><strong>Airbnb Listing vs Number of Crimes in Washington, D.C. Neighborhood</strong></h2>
+                    
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="scatter1"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="scatter2"></div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
+
+    
 
 
     <script>
 
-
+        
         function updateEntireData(entireData) {
             // Reference to Panel element for entireData
             var PANEL = document.getElementById("entire");
@@ -149,26 +175,23 @@
         }
 
 
-
         function buildCharts(listingData) {
 
             // Loop through listprice data and find the Airbnb list host information
-
+            
             //var labels=listingData[0]['room_type']+listingData[0]['minimum_nights'] +listingData[0]['availability_365'];
             // Build Bubble Chart
             var bubbleLayout = {
-                margin: {
-                    t: 0,
-
+                margin: {  
+                    t: 50,    
                 },
                 hovermode: 'closest',
-                title: '<b>Airbnb Rental Price vs Airbnb ID<b>',
+                title: '<b>Airbnb Rental Price per Airbnb ID<b>',
                 xaxis: { title: 'Airbnb ID' },
                 yaxis: {title: "Log Airbnb Rental Price ($)", type: 'log', autorange: true},
                 height: 800,
-                width: 1400,
+                width: 1300,
             };
-
 
 
             var bubbleData = [{
@@ -180,7 +203,7 @@
                     color: listingData[0]['airbnb_ids'],
                     colorscale: "Earth",
                     size: listingData[0]['price'].map(el => el/ 30),
-
+                
                 }
             }];
             var BUBBLE = document.getElementById('bubble');
@@ -220,11 +243,11 @@
             var labels = listingData[0]['room_type'];
 
             // Return the listing Description for each airbnb ID in the dataset
-            //var labels = 'Host ID: listingData[0]['host_id']\
-                        //<br>Room Type: listingData[0]['room_type']\
-                       // <br>Minimum Nights: listingData[0]['minimum_nights'] %s nights\
+            //var labels = 'Host ID: listingData[0]['host_id']+\
+                        //<br>Room Type: listingData[0]['room_type']+\
+                       // <br>Minimum Nights: listingData[0]['minimum_nights'] %s nights+\
                        // <br>Availability_365: listingData[0]['availability_365'] %s days]';
-
+    
 
             // Update the Bubble Chart with the new data
             var BUBBLE = document.getElementById('bubble');
@@ -254,7 +277,7 @@
                 if (error) return console.warn(error);
 
                 buildCharts(listingData);
-
+                
             });
 
 
@@ -278,7 +301,7 @@
 
 
             buildGauge(neighbourhood);
-
+    
             buildScatter1();
             buildScatter2();
 
@@ -306,7 +329,7 @@
             // Fetch new data each time a new neighbourhood names is selected
             getData(newneighbourhoodname, updateCharts);
 
-
+            
         }
 
         function init() {
@@ -317,7 +340,7 @@
         init();
 
 
-
+        
         function buildGauge(neighbourhood) {
 
             Plotly.d3.json(`/crimerate/${neighbourhood}`, function(error, crimerateData) {
@@ -433,7 +456,7 @@
                 if (error) return console.warn(error);
                 correlationData = correlationData[0]
                  // Create the Traces
-
+                
                 var trace2 = {
                     x: correlationData.number_of_crimes,
                     y: correlationData.total_reviews_per_neighbourhood,
@@ -464,14 +487,21 @@
 
             })
         }
+
+    
     </script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
 
 
 </body>
 </html>
+
+
+
+
+   
