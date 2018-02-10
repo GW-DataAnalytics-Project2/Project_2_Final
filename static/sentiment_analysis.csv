@@ -1,0 +1,40 @@
+neighbourhood_cleansed,sentiment_score
+"Brightwood Park, Crestwood, Petworth",0.8338025386635548
+"Brookland, Brentwood, Langdon",0.8227563893016346
+"Capitol Hill, Lincoln Park",0.8464612241389208
+"Capitol View, Marshall Heights, Benning Heights",0.7891671724137934
+"Cathedral Heights, McLean Gardens, Glover Park",0.843940359364203
+"Cleveland Park, Woodley Park, Massachusetts Avenue Heights, Woodland-Normanstone Terrace",0.8209242089402321
+"Colonial Village, Shepherd Park, North Portal Estates",0.8216243315508025
+"Columbia Heights, Mt. Pleasant, Pleasant Plains, Park View",0.8286778771023706
+"Congress Heights, Bellevue, Washington Highlands",0.8265007782101167
+"Deanwood, Burrville, Grant Park, Lincoln Heights, Fairmont Heights",0.7264531034482758
+"Douglas, Shipley Terrace",0.8091523972602743
+"Downtown, Chinatown, Penn Quarters, Mount Vernon Square, North Capitol Street",0.8010085174418572
+"Dupont Circle, Connecticut Avenue/K Street",0.8332568716305946
+"Eastland Gardens, Kenilworth",0.7407234074074078
+"Edgewood, Bloomingdale, Truxton Circle, Eckington",0.8117511036004952
+"Fairfax Village, Naylor Gardens, Hillcrest, Summit Park",0.7621076923076926
+"Friendship Heights, American University Park, Tenleytown",0.854612400290064
+"Georgetown, Burleith/Hillandale",0.8123793683138069
+"Hawthorne, Barnaby Woods, Chevy Chase",0.8241497461928936
+Historic Anacostia,0.7791699921445423
+"Howard University, Le Droit Park, Cardozo/Shaw",0.8316803246753249
+"Ivy City, Arboretum, Trinidad, Carver Langston",0.7712962974203323
+"Kalorama Heights, Adams Morgan, Lanier Heights",0.8316049395458579
+"Lamont Riggs, Queens Chapel, Fort Totten, Pleasant Hill",0.8268066455696204
+"Mayfair, Hillbrook, Mahaning Heights",0.7738029498525071
+"Near Southeast, Navy Yard",0.8638127272727282
+"North Cleveland Park, Forest Hills, Van Ness",0.821099481865285
+"North Michigan Park, Michigan Park, University Heights",0.7885578154425609
+"River Terrace, Benning, Greenway, Dupont Park",0.7423418918918925
+"Shaw, Logan Circle",0.8145473736829938
+"Sheridan, Barry Farm, Buena Vista",0.7886417968750001
+"Southwest Employment Area, Southwest/Waterfront, Fort McNair, Buzzard Point",0.7846634890003853
+"Spring Valley, Palisades, Wesley Heights, Foxhall Crescent, Foxhall Village, Georgetown Reservoir",0.8381212876427833
+"Takoma, Brightwood, Manor Park",0.8324126786824112
+"Twining, Fairlawn, Randle Highlands, Penn Branch, Fort Davis Park, Fort Dupont",0.7193189490445855
+"Union Station, Stanton Park, Kingman Park",0.8289901172529269
+"West End, Foggy Bottom, GWU",0.8045767857142833
+"Woodland/Fort Stanton, Garfield Heights, Knox Hill",0.7770031746031741
+"Woodridge, Fort Lincoln, Gateway",0.8054111964873772
